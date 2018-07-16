@@ -1,0 +1,7 @@
+@import "variables";
+@import "mixins";
+.#{$fa-css-prefix}-lg {
+  font-size: (4em / 3);
+  line-height: (3em / 4);
+  vertical-align: -15%;
+}
