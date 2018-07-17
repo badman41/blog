@@ -170,3 +170,8 @@ en:
       btn_confirm: "You sure?"
       posted: "Posted "
       ago: "ago"
+  follow:
+    following:
+      title: "Following"
+    followers:
+      title: "Follower"
