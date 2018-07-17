@@ -14,7 +14,35 @@
         <li class="nav-item">
           <%= link_to t("layout._header.about"), about_path %>
         </li>
+        <% if logged_in? %>
+          <li class="nav-item"><%= link_to t(".user"), users_path %></li>
+          <li class="nav-item dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <%= t ".account"%> <b class="caret"></b>
+            </a>
+            <ul class="nav-item dropdown-menu">
+              <li class="nav-item"><%= link_to t(".Profile"), current_user %></li>
+              <li class="nav-item"><%= link_to t(".Settings"), edit_user_path(current_user) %></li>
+              <li class="divider"></li>
+              <li class="nav-item">
+                <%= link_to t(".Log out"), logout_path, method: :delete %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li class="nav-item"><%= link_to t(".Log in"), login_path %></li>
+        <% end %>
       </ul>
     </div>
   </div>
 </nav>
+<header class="masthead" style="background-image: url('/assets/blog2.jpg')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+    
+      <div class="col-lg-8 col-md-10 mx-auto">
+      </div>
+    </div>
+  </div>
+</header>

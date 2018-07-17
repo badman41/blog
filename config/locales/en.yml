@@ -79,7 +79,7 @@ en:
     show:
       flash_notice: "Không tìm thấy user nào!"
       micropost: "Microposts"  
-    _user:
+    user:
       delete: ":delete"
       confirm: "You sure?"
     index:
