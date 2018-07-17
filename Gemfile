@@ -7,6 +7,7 @@ gem "bootsnap", ">= 1.1.0", require: false
 gem "bootstrap-sass", "3.3.7"
 gem "bootstrap-will_paginate", "1.0.0"
 gem "carrierwave", "1.2.2"
+gem "ckeditor"
 gem "coffee-rails", "~> 4.2"
 gem "config"
 gem "faker", "1.8.7"

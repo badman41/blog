@@ -1,17 +1,34 @@
 <% provide :title, @user.name %>
 <div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user, {size: Settings.user.size_gravatar} %>
-        <%= @user.name %>
-      </h1>
-    </section>
-    <section class="stats">
-      <%= render "shared/stats" %>
-    </section>
-  </aside>
+  <div class="col-md-2">
+  </div>
   <div class="col-md-8">
-    <%= render "follow_form" if logged_in? %>
+    <aside>
+      <section class="user_info">
+        <h1>
+          <%= gravatar_for @user, {size: Settings.user.size_gravatar} %>
+          <%= @user.name %>
+        </h1>
+      </section>
+      <section class="stats">
+        <%= render "shared/stats" %>
+      </section>
+    </aside>
+    <div class="col-md-4">
+    </div>
+    <aside class = "col-md-2">
+      <%= render "follow_form" if logged_in? %>
+    </aside>
+    <aside class="col-md-12">
+    </aside>
+  </br>
+  </br>
+    <% if @user.entries.any? %>
+      <h3><%= t ".micropost"%> (<%= @user.entries.size %>)</h3>
+      <ol class="microposts">
+        <%= render @entries %>
+      </ol>
+      <%= will_paginate @entries %>
+    <% end %>
   </div>
 </div>

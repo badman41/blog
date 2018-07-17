@@ -1,0 +1,20 @@
+<% if @feed_items.any? %>
+  <% @feed_items.each do |item| %>
+    <div class="post-preview">
+      <a href="<%= entry_path item %>">
+        <h2 class="post-title">
+          <%= item.title %>
+        </h2>
+        <h3 class="post-subtitle">
+          <%=raw item.content[0..29] %>...
+        </h3>
+      </a>
+      <p class="post-meta">Posted by
+        <%= link_to item.user.name, user_path(item.user)%>
+        <br/>
+        <%= item.created_at.strftime("%Y-%m-%d") %></p>
+    </div>
+  <% end %>
+  <hr>
+  <%= will_paginate @feed_items %>
+<% end %>

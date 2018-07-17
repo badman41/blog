@@ -8,7 +8,8 @@ class User < ApplicationRecord
                                   dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
-
+  has_many :entries, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   before_save :email_downcase
   before_create :create_activation_digest
@@ -86,6 +87,10 @@ class User < ApplicationRecord
       following.include? other_user
     end
 
+    def feed
+      following_ids = Relationship.select(:followed_id).where follower_id: id
+      Entry.feed_query(following_ids).or Entry.by_user_id(id)
+    end
     private
 
     def email_downcase
