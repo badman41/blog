@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'comments/create'
   scope "(:locale)", :locale => /en|vn/ do
     root "static_pages#home"
     get "/home", to: "static_pages#home"
@@ -16,9 +17,12 @@ Rails.application.routes.draw do
     get 'follow/follower'
     get "following/:id", to:"follow#following", as: "following"
     get "followers/:id", to:"follow#followers", as: "followers"
+    get  '/create_post',  to: 'entries#new'
     resources :users
     resources :account_activations, only: [:edit]
     resources :password_resets, only: [:new, :create, :edit, :update]
     resources :relationships, only: [:create, :destroy]
+    resources :entries, only: [:show, :new, :create, :destroy]
+    resources :comments, only: [:create]
   end
 end

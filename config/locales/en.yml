@@ -158,14 +158,14 @@ en:
     new:
       title: "Forgot password"
       btn_submit: "Submit"
-  microposts:
+  entries:
     create:
       flash_success: "Micropost created!"
     destroy:
       flash_success: "Micropost deleted!"
       flash_error: "Error!"
     error_picture: "should be less than 5MB"
-    micropost:
+    entry:
       btn_delete: "delete"
       btn_confirm: "You sure?"
       posted: "Posted "

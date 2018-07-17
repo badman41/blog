@@ -12,6 +12,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 # Rails.application.config.assets.precompile += %w(  admin.js admin.css )
+Rails.application.config.assets.precompile += %w( clean-blog.min.css )
 Rails.application.config.assets.precompile += %w( clean-blog.css )
 Rails.application.config.assets.precompile += %w( vendor/bootstrap/css/bootstrap.min.css )
 Rails.application.config.assets.precompile += %w( vendor/font-awesome/scss/font-awesome.css )
@@ -35,3 +36,4 @@ Rails.application.config.assets.precompile += %w( vendor/daterangepicker/moment.
 Rails.application.config.assets.precompile += %w( vendor/daterangepicker/daterangepicker.js )
 Rails.application.config.assets.precompile += %w( vendor/countdowntime/countdowntime.js )
 Rails.application.config.assets.precompile += %w( main.js )
+Rails.application.config.assets.precompile += %w( microposts_form.js )

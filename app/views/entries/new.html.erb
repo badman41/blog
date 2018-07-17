@@ -1,0 +1,31 @@
+<%= form_for @entry do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div>
+    <%= f.label :title %>
+  </div>
+  <div class="field">
+    <%= f.text_field :title, placeholder: "title" %>
+  </div>
+    <div>
+    <%= f.label :content %>
+  </div>
+  <div class="field">
+    <%= f.cktext_area :content, rows: 10 %>
+  </div>
+  <div>
+    <label>Cover picture</label>
+  </div>
+  <div class="field">
+    <span class="picture">
+      <%= f.file_field :picture, accept: "image/jpeg,image/gif,image/png" %>
+    </span>
+  </div>
+  </br>
+  <div class= "col-md-10">
+  </div>
+  <div class= "col-md-2">
+    <%= f.submit "Create", class: "btn btn-primary" %>
+  </div>
+  
+<% end %>
+<%= javascript_include_tag "microposts_form.js" %>
